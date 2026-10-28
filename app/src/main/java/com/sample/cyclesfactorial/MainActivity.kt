@@ -30,3 +30,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+@Composable
+fun FactorialScreen() {
+    var inputN by remember { mutableStateOf("") }
+    var resultText by remember { mutableStateOf("") }
