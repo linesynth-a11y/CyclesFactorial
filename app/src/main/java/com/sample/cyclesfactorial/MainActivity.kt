@@ -43,6 +43,18 @@ fun FactorialScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        OutlinedTextField(
+            value = inputN,
+            onValueChange = { newValue ->
+                if (newValue.all { it.isDigit() } && newValue.length <= 2) inputN = newValue
+            },
+            label = { Text("Введите n (1..20)") },
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(Modifier.height(16.dp))
+
 
     }
 }
