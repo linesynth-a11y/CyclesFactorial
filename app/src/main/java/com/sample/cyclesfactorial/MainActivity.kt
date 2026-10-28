@@ -35,3 +35,14 @@ class MainActivity : ComponentActivity() {
 fun FactorialScreen() {
     var inputN by remember { mutableStateOf("") }
     var resultText by remember { mutableStateOf("") }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+
+    }
+}
