@@ -48,13 +48,29 @@ fun FactorialScreen() {
             onValueChange = { newValue ->
                 if (newValue.all { it.isDigit() } && newValue.length <= 2) inputN = newValue
             },
-            label = { Text("Введите n (1..20)") },
+            label = { Text("введите n (1..20)") },
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(Modifier.height(16.dp))
 
+        Button(
+            onClick = {
+                resultText = if (inputN.isEmpty()) "введите n!"
+                else checkFactorial(inputN.toIntOrNull() ?: 0)
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("проверить", fontSize = 18.sp)
+        }
 
+        Spacer(Modifier.height(24.dp))
+
+        Text(
+            text = resultText,
+            fontSize = 18.sp,
+            color = MaterialTheme.colorScheme.primary
+        )
     }
 }
