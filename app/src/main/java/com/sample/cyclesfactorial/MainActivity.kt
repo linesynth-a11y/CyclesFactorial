@@ -74,3 +74,25 @@ fun FactorialScreen() {
         )
     }
 }
+
+fun checkFactorial(n: Int): String {
+    if (n < 1) return "введите n ≥ 1"
+    if (n > 20) return "для расчёта возьмите n ≤ 20"
+    var factorial = 1L
+
+    for (i in 2..n) {
+        factorial *= i
+    }
+
+    var k = 1L
+    while (true) {
+        val product = k * (k + 1) * (k + 2)
+        when {
+            product == factorial ->
+                return "$n! = $factorial = $k × ${k + 1} × ${k + 2}\nможно представить"
+            product > factorial ->
+                return "$n! = $factorial\nнельзя представить в виде\nпроизведения трёх последовательных чисел"
+        }
+        k++
+    }
+}
