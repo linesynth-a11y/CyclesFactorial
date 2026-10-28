@@ -96,3 +96,11 @@ fun checkFactorial(n: Int): String {
         k++
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewFactorialScreen() {
+    CyclesFactorialTheme {
+        FactorialScreen()
+    }
+}
